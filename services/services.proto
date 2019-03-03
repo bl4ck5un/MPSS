@@ -1,0 +1,48 @@
+syntax = "proto3";
+package services;
+
+// The bulletinboard service definition
+service BulletinBoardService {
+	rpc SubmitProposalHash(ProposalHash) returns (Empty) {}
+    rpc AssembleShare(Share) returns (Empty) {}
+    rpc Kill(Empty) returns (Empty) {}
+}
+
+// The node service definition
+service Node {
+    rpc AdvanceEpoch (Empty) returns (Empty);
+    rpc StartCheckingProposals (ProposalHashList) returns (Empty);
+    rpc SubmitProposal (Proposal) returns (Empty);
+    rpc SubmitBlindedShare (BlindedShare) returns (Empty);
+}
+
+message Share {
+    int32 epoch = 1;
+    int64 from = 2;
+    bytes share = 3;
+}
+
+message BlindedShare {
+    int32 epoch = 1;
+    int64 from = 2;
+    bytes share = 3;
+}
+
+message ProposalHash {
+    int32 epoch = 1;
+    int64 proposer = 2;
+	bytes hash = 3;
+}
+
+message ProposalHashList {
+    int32 epoch = 1;
+    repeated ProposalHash list = 2;
+}
+
+message Proposal {
+    int32 epoch = 1;
+    int64 from = 2;
+    bytes gob = 3;
+}
+
+message Empty {}

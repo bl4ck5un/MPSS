@@ -1,0 +1,39 @@
+degree = 3
+
+[primary]
+url = "localhost:8001"
+
+[peers]
+    [peers.1]
+    id=1
+    url="localhost:8002"
+
+    [peers.2]
+    id=2
+    url="localhost:8003"
+
+    [peers.3]
+    id=3
+    url="localhost:8004"
+
+    [peers.4]
+    id=4
+    url="localhost:8005"
+    [peers.5]
+    id=5
+    url="localhost:8006"
+    [peers.6]
+    id=6
+    url="localhost:8007"
+    [peers.7]
+    id=7
+    url="localhost:8008"
+    [peers.8]
+    id=8
+    url="localhost:8009"
+    [peers.9]
+    id=9
+    url="localhost:8010"
+    [peers.10]
+    id=10
+    url="localhost:8011"
