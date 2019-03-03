@@ -1,0 +1,7 @@
+*.stderr
+*.stdout
+*.exe
+
+.DS_Store
+*.pdf
+*.pem
